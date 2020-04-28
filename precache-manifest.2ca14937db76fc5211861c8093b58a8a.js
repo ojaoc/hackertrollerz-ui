@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cff63e275d23ba2cd832217406506191",
+    "revision": "e17db209b069083281054a541f465a4a",
     "url": "/hackertrollerz-ui/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hackertrollerz-ui/static/css/2.55ef3354.chunk.css"
   },
   {
-    "revision": "0a8d9f78e07f1ba87a7f",
+    "revision": "b9000fb85400a958b691",
     "url": "/hackertrollerz-ui/static/css/main.66a3f015.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hackertrollerz-ui/static/js/2.2e328ced.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0a8d9f78e07f1ba87a7f",
-    "url": "/hackertrollerz-ui/static/js/main.140fb461.chunk.js"
+    "revision": "b9000fb85400a958b691",
+    "url": "/hackertrollerz-ui/static/js/main.47e2e2c6.chunk.js"
   },
   {
     "revision": "8c2544d48c37699e6af4",
