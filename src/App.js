@@ -11,7 +11,8 @@ export default class App extends React.Component {
       error: null,
       isLoaded: false,
       trends: [],
-      hasClickedOpinion: false
+      hasClickedOpinion: false,
+      lobby: ""
     };
   }
   componentDidMount() {
@@ -38,8 +39,11 @@ export default class App extends React.Component {
     this.setState({ username: username });
   };
   setHasClickedOpinion = (boolean) => {
-      this.setState({ hasClickedOpinion: boolean });
-  }
+    this.setState({ hasClickedOpinion: boolean });
+  };
+  setLobby = (trendName) => {
+    this.setState({ lobby: trendName });
+  };
   render() {
     const { error, isLoaded, trends } = this.state;
     if (error) {
@@ -54,8 +58,17 @@ export default class App extends React.Component {
             setUsername={this.setUser}
             username={this.state.username}
           />
-          <TrendList trends={this.state.trends} username={this.state.username} opinion={this.setHasClickedOpinion}/>
-          <ChatRoom username={this.state.username} opinion={this.state.hasClickedOpinion} />
+          <TrendList
+            trends={this.state.trends}
+            username={this.state.username}
+            opinion={this.setHasClickedOpinion}
+            lobby={this.setLobby}
+          />
+          <ChatRoom
+            username={this.state.username}
+            opinion={this.state.hasClickedOpinion}
+            lobby={this.state.lobby}
+          />
         </div>
       );
     }

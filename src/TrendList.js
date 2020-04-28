@@ -7,14 +7,16 @@ export default class TrendList extends React.Component {
             hasClickedOpinion: false
         }
     }
-    handleClickAgree = () => {
+    handleClickAgree = (lobby) => {
         this.props.opinion(true);
+        this.props.lobby(lobby);
         this.setState({
             hasClickedOpinion: true
         })
     }
-    handleClickDisagree = () => {
+    handleClickDisagree = (lobby) => {
         this.props.opinion(true);
+        this.props.lobby(lobby);
         this.setState({
             hasClickedOpinion: true
         })
@@ -29,8 +31,8 @@ export default class TrendList extends React.Component {
             {trend.tweet_volume ? <h6>{trend.tweet_volume} tweets</h6> : null}
           </div>
           <div className="buttonContainer">
-            <button className="btn btn-success m-2" onClick={this.handleClickAgree}>Agree</button>
-            <button className="btn btn-danger  m-2" onClick={this.handleClickDisagree}>Disagree</button>
+            <button className="btn btn-success m-2" onClick={() => {this.handleClickAgree(trend.name)}}>Agree</button>
+            <button className="btn btn-danger  m-2" onClick={() => {this.handleClickDisagree(trend.name)}}>Disagree</button>
           </div>
         </div>
       );

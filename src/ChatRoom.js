@@ -46,7 +46,7 @@ export default class ChatRoom extends React.Component {
     super(props);
     this.state = {
       clientConnected: false,
-      messages: [],
+      messages: []
     };
   }
 
@@ -69,7 +69,7 @@ export default class ChatRoom extends React.Component {
             type: "CHAT"
         }
         console.log(snMsg);
-      this.clientRef.sendMessage("/trend/lobby", JSON.stringify(snMsg));
+      this.clientRef.sendMessage("/trend/" + this.props.lobby, JSON.stringify(snMsg));
       return true;
     } catch (e) {
       return false;
@@ -81,7 +81,7 @@ export default class ChatRoom extends React.Component {
     return this.props.opinion ? (
       <div>
         <TalkBox
-          topic="react-websocket-template"
+          topic={this.props.lobby}
           currentUserId={this.randomUserId}
           currentUser={this.randomUserName}
           messages={this.state.messages}
@@ -91,7 +91,7 @@ export default class ChatRoom extends React.Component {
 
         <SockJsClient
           url={wsSourceUrl}
-          topics={["/trend/lobby"]}
+          topics={["/trend/" + this.props.lobby]}
           onMessage={this.onMessageReceive}
           ref={(client) => {
             this.clientRef = client;
