@@ -20,8 +20,8 @@ export default class LoginScreen extends React.Component {
       redirect_uri: "https://ojaoc.github.io/hackertrollerz-ui/",
     });
     //logged in. you can get the user profile like this:
-    const user = auth0.getUser();
-    this.props.setUsername(user);
+    const user = await auth0.getUser();
+    this.props.setUsername(user.username);
     console.log(user);
   };
 
