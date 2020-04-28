@@ -77,7 +77,7 @@ export default class ChatRoom extends React.Component {
   };
 
   render() {
-    const wsSourceUrl = "https://twit-war.herokuapp.com/ws";
+    const wsSourceUrl = "http://twit-war.herokuapp.com/ws";
     return (
       <div>
         <TalkBox
