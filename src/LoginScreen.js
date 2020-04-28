@@ -49,7 +49,6 @@ export default class LoginScreen extends React.Component {
           </label>
           <input type="submit" value="Submit" />
         </form>
-        <button onClick={this.onLoginAttempt}>Login</button>
       </div>
     ) : null;
   }

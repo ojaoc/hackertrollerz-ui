@@ -78,7 +78,7 @@ export default class ChatRoom extends React.Component {
 
   render() {
     const wsSourceUrl = "https://twit-war.herokuapp.com/ws";
-    return (
+    return this.props.opinion ? (
       <div>
         <TalkBox
           topic="react-websocket-template"
@@ -105,6 +105,6 @@ export default class ChatRoom extends React.Component {
           debug={false}
         />
       </div>
-    );
+    ) : null;
   }
 }

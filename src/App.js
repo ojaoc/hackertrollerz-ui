@@ -11,6 +11,7 @@ export default class App extends React.Component {
       error: null,
       isLoaded: false,
       trends: [],
+      hasClickedOpinion: false
     };
   }
   componentDidMount() {
@@ -36,6 +37,9 @@ export default class App extends React.Component {
   setUser = (username) => {
     this.setState({ username: username });
   };
+  setHasClickedOpinion = (boolean) => {
+      this.setState({ hasClickedOpinion: boolean });
+  }
   render() {
     const { error, isLoaded, trends } = this.state;
     if (error) {
@@ -50,8 +54,8 @@ export default class App extends React.Component {
             setUsername={this.setUser}
             username={this.state.username}
           />
-          <TrendList trends={this.state.trends} username={this.state.username} />
-          <ChatRoom username={this.state.username} />
+          <TrendList trends={this.state.trends} username={this.state.username} opinion={this.setHasClickedOpinion}/>
+          <ChatRoom username={this.state.username} opinion={this.state.hasClickedOpinion} />
         </div>
       );
     }
