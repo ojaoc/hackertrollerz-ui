@@ -1,0 +1,9 @@
+body {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.trendContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
