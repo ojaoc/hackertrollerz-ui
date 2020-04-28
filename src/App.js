@@ -35,6 +35,7 @@ export default class App extends React.Component {
   }
   setUser = (username) => {
     this.setState({ username: username });
+    console.log(this.state.username);
   };
   render() {
     const { error, isLoaded, trends } = this.state;
