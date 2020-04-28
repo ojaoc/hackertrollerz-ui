@@ -5,8 +5,7 @@ export default class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      auth0: null,
+      username: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,6 +22,9 @@ export default class LoginScreen extends React.Component {
     //logged in. you can get the user profile like this:
     const user = await auth0.getUser();
     console.log(user);
+    this.setState({
+        username: user
+    });
   };
 
   handleChange(event) {
