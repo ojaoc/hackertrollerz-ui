@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/hackertrollerz-ui/static/css/main.66a3f015.chunk.css",
-    "main.js": "/hackertrollerz-ui/static/js/main.b5c70dac.chunk.js",
+    "main.js": "/hackertrollerz-ui/static/js/main.7c52666a.chunk.js",
     "runtime-main.js": "/hackertrollerz-ui/static/js/runtime-main.b7e44cf1.js",
     "static/css/2.55ef3354.chunk.css": "/hackertrollerz-ui/static/css/2.55ef3354.chunk.css",
     "static/js/2.2e328ced.chunk.js": "/hackertrollerz-ui/static/js/2.2e328ced.chunk.js",
     "index.html": "/hackertrollerz-ui/index.html",
-    "precache-manifest.f6eac74a9558ff6dddc2818300381054.js": "/hackertrollerz-ui/precache-manifest.f6eac74a9558ff6dddc2818300381054.js",
+    "precache-manifest.6d23a486852fe9991dbf4917b0d3113f.js": "/hackertrollerz-ui/precache-manifest.6d23a486852fe9991dbf4917b0d3113f.js",
     "service-worker.js": "/hackertrollerz-ui/service-worker.js",
     "static/js/2.2e328ced.chunk.js.LICENSE.txt": "/hackertrollerz-ui/static/js/2.2e328ced.chunk.js.LICENSE.txt"
   },
@@ -15,6 +15,6 @@
     "static/css/2.55ef3354.chunk.css",
     "static/js/2.2e328ced.chunk.js",
     "static/css/main.66a3f015.chunk.css",
-    "static/js/main.b5c70dac.chunk.js"
+    "static/js/main.7c52666a.chunk.js"
   ]
 }
