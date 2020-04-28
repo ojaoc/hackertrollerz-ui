@@ -64,7 +64,7 @@ export default class ChatRoom extends React.Component {
   sendMessage = (msg, selfMsg) => {
     try {
         let snMsg = {
-            sender: "FABINH BIGODINH",
+            sender: this.props.username,
             content: selfMsg.message,
             type: "CHAT"
         }

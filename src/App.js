@@ -52,7 +52,7 @@ export default class App extends React.Component {
             username={this.state.username}
           />
           <TrendList trends={this.state.trends} username={this.state.username} />
-          <ChatRoom />
+          <ChatRoom username={this.state.username} />
         </div>
       );
     }
