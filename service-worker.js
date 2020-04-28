@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/hackertrollerz-ui/precache-manifest.cc4604310c8b7c5ec2a12f55fde3c569.js"
+  "/hackertrollerz-ui/precache-manifest.31c670ca8e07cf5db8fe5db4bfc33ba7.js"
 );
 
 self.addEventListener('message', (event) => {
