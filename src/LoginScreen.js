@@ -21,6 +21,7 @@ export default class LoginScreen extends React.Component {
     });
     //logged in. you can get the user profile like this:
     const user = await auth0.getUser();
+    console.log(user);
     this.props.setUsername(user.username);
   };
 
