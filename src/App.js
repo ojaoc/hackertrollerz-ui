@@ -12,7 +12,9 @@ export default class App extends React.Component {
       isLoaded: false,
       trends: [],
       hasClickedOpinion: false,
-      lobby: ""
+      lobby: "",
+      polarity: null,
+      room: null,
     };
   }
   componentDidMount() {
@@ -44,6 +46,12 @@ export default class App extends React.Component {
   setLobby = (trendName) => {
     this.setState({ lobby: trendName });
   };
+  setPolarity = (boolean) => {
+    this.setState({ polarity: boolean });
+  };
+  setRoom = (number) => {
+    this.setState({ room: number });
+  };
   render() {
     const { error, isLoaded, trends } = this.state;
     if (error) {
@@ -53,7 +61,7 @@ export default class App extends React.Component {
     } else {
       console.log(this.state.trends);
       return (
-        <div className="container">
+        <>
           <LoginScreen
             setUsername={this.setUser}
             username={this.state.username}
@@ -62,14 +70,18 @@ export default class App extends React.Component {
             trends={this.state.trends}
             username={this.state.username}
             opinion={this.setHasClickedOpinion}
+            polarity={this.setPolarity}
             lobby={this.setLobby}
+            setRoom={this.setRoom}
           />
           <ChatRoom
             username={this.state.username}
             opinion={this.state.hasClickedOpinion}
+            polarity={this.state.polarity}
             lobby={this.state.lobby}
+            room={this.state.room}
           />
-        </div>
+        </>
       );
     }
   }

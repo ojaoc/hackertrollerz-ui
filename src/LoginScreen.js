@@ -5,7 +5,7 @@ export default class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: ""
+      username: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,18 +37,23 @@ export default class LoginScreen extends React.Component {
 
   render() {
     return !this.props.username.trim() ? (
-      <div className="container">
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Username:
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.handleChange}
-            />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
+      <div className="jumbotron centered">
+        <div className="form-group">
+          <form onSubmit={this.handleSubmit}>
+            <div className="form-group">
+              <label className="p-2">
+                Username:
+                <input
+                  className="form-control"
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.handleChange}
+                />
+              </label>
+              <input type="submit" value="Submit" className="btn btn-primary" />
+            </div>
+          </form>
+        </div>
       </div>
     ) : null;
   }

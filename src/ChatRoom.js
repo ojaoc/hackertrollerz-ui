@@ -45,16 +45,18 @@ export default class ChatRoom extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      error: null,
+      isLoaded: false,
       clientConnected: false,
-      messages: []
+      messages: [],
+      room: null,
     };
   }
 
   onMessageReceive = (msg, topic) => {
-    console.log(msg);
-    let tbMsg =  {
-        author: msg.sender,
-        message: msg.content
+    let tbMsg = {
+      author: msg.sender,
+      message: msg.content,
     };
     this.setState((prevState) => ({
       messages: [...prevState.messages, tbMsg],
@@ -63,13 +65,16 @@ export default class ChatRoom extends React.Component {
 
   sendMessage = (msg, selfMsg) => {
     try {
-        let snMsg = {
-            sender: this.props.username,
-            content: selfMsg.message,
-            type: "CHAT"
-        }
-        console.log(snMsg);
-      this.clientRef.sendMessage("/trend/" + this.props.lobby, JSON.stringify(snMsg));
+      let snMsg = {
+        sender: this.props.username,
+        content: selfMsg.message,
+        type: "CHAT",
+      };
+      console.log(snMsg);
+      this.clientRef.sendMessage(
+        "/trend/" + this.props.room,
+        JSON.stringify(snMsg)
+      );
       return true;
     } catch (e) {
       return false;
@@ -79,31 +84,33 @@ export default class ChatRoom extends React.Component {
   render() {
     const wsSourceUrl = "https://twit-war.herokuapp.com/ws";
     return this.props.opinion ? (
-      <div>
-        <TalkBox
-          topic={this.props.lobby}
-          currentUserId={this.randomUserId}
-          currentUser={this.randomUserName}
-          messages={this.state.messages}
-          onSendMessage={this.sendMessage}
-          connected={this.state.clientConnected}
-        />
+      <div className="jumbotron centered">
+        <div>
+          <TalkBox
+            topic={this.props.lobby}
+            currentUserId={this.randomUserId}
+            currentUser={this.randomUserName}
+            messages={this.state.messages}
+            onSendMessage={this.sendMessage}
+            connected={this.state.clientConnected}
+          />
 
-        <SockJsClient
-          url={wsSourceUrl}
-          topics={["/trend/" + this.props.lobby]}
-          onMessage={this.onMessageReceive}
-          ref={(client) => {
-            this.clientRef = client;
-          }}
-          onConnect={() => {
-            this.setState({ clientConnected: true });
-          }}
-          onDisconnect={() => {
-            this.setState({ clientConnected: false });
-          }}
-          debug={false}
-        />
+          <SockJsClient
+            url={wsSourceUrl}
+            topics={["/trend/" + this.props.room]}
+            onMessage={this.onMessageReceive}
+            ref={(client) => {
+              this.clientRef = client;
+            }}
+            onConnect={() => {
+              this.setState({ clientConnected: true });
+            }}
+            onDisconnect={() => {
+              this.setState({ clientConnected: false });
+            }}
+            debug={false}
+          />
+        </div>
       </div>
     ) : null;
   }
